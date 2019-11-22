@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Trumpet";
+}
+
+<h2>Trumpet</h2>
+
+<img src="~/Content/Images/trumpet.jpg" /><br /><br />
+<a class="btn btn-primary" href="@Url.Action("TrumpetPrice", "Rentals", new { type = 1 })">New</a>
+<a class="btn btn-primary" href="@Url.Action("TrumpetPrice", "Rentals", new { type = 0 })">Used</a>
+<br /><br />
+@Html.ActionLink("Return to list of instruments", "Index", "Rentals")
+
+
+<style>
+    img {
+        width: 200px
+    }
+</style>

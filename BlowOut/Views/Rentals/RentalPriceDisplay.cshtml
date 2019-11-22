@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Rental Price Display";
+}
+
+<h2>Rental Price</h2>
+@ViewBag.Price <!--show price from view-->
+<br /><br />
+
+<!--helper text note-->
+<p class="help-block">Once the 18 months has been achieved, the client owns the instrument. 
+    If they return it at any time before 3 months there will be a $200 re-stocking fee. If they 
+    return it after 3 months they forfeit any equity in the instrument.</p>
+
+@Html.ActionLink("Return to list of instruments","Index", "Rentals")
+
