@@ -33,12 +33,12 @@ namespace BlowOut.Models
         [StringLength(15, ErrorMessage = "Cannot exceed 15 characters")]
         public String state { get; set; }
         [Display(Name = "Zipcode")]
-        [StringLength(6, ErrorMessage = "Cannot exceed 6 characters")]
+        [StringLength(5, ErrorMessage = "Cannot exceed 5 characters")]
         public String zip { get; set; }
         [Display(Name = "Email Address")]
         [StringLength(30, ErrorMessage = "Cannot exceed 30 characters")]
         public String email { get; set; }
         [Display(Name = "Phone Number")]
-        public int phone { get; set; }
+        public string phone { get; set; }
     }
 }
