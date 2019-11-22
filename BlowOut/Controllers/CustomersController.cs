@@ -56,7 +56,8 @@ namespace BlowOut.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(customer);
+            ViewBag.Name = customer.firstName + " " + customer.lastName;
+            return View("ShowSummary");
         }
 
         // GET: Customers/Edit/5

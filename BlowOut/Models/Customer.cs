@@ -39,6 +39,7 @@ namespace BlowOut.Models
         [StringLength(30, ErrorMessage = "Cannot exceed 30 characters")]
         public String email { get; set; }
         [Display(Name = "Phone Number")]
-        public string phone { get; set; }
+        [StringLength(30, ErrorMessage = "Cannot exceed 30 characters")]
+        public String phone { get; set; }
     }
 }

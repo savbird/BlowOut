@@ -10,6 +10,7 @@ namespace BlowOut.Controllers
 {
     public class RentalsController : Controller
     {
+
         BlowOutContext db = new BlowOutContext();
         public ActionResult Index()
         {
@@ -52,7 +53,7 @@ namespace BlowOut.Controllers
                 ViewBag.Price = "$27 a month";
             }
 
-            return RedirectToAction("Create", "Instruments", );
+            return View("RentalPriceDisplay");
         }
         public ActionResult FlutePrice(int type)
         {
