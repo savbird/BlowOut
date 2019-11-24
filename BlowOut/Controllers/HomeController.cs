@@ -19,7 +19,7 @@ namespace BlowOut.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "We are an awesome company that sells cheap instruments. Here are our founders.";
 
             return View();
         }

@@ -145,13 +145,14 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\clarinet.jpg" />
-    <Content Include="Content\Images\flute.jpg" />
+    <Content Include="Content\Images\Clarinet.jpg" />
+    <Content Include="Content\Images\Flute.jpg" />
+    <Content Include="Content\Images\founders.jpg" />
     <Content Include="Content\Images\instrument.jpg" />
-    <Content Include="Content\Images\saxophone.jpg" />
-    <Content Include="Content\Images\trombone.jpg" />
-    <Content Include="Content\Images\trumpet.jpg" />
-    <Content Include="Content\Images\tuba.jpg" />
+    <Content Include="Content\Images\Saxophone.jpg" />
+    <Content Include="Content\Images\Trombone.jpg" />
+    <Content Include="Content\Images\Trumpet.jpg" />
+    <Content Include="Content\Images\Tuba.jpg" />
     <Content Include="Content\MyStyles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -195,16 +196,16 @@
     <Content Include="Views\Rentals\Trumpet.cshtml" />
     <Content Include="Views\Rentals\Tuba.cshtml" />
     <Content Include="Views\Rentals\RentalPriceDisplay.cshtml" />
-    <Content Include="Views\Customers\Create.cshtml" />
-    <Content Include="Views\Customers\Delete.cshtml" />
-    <Content Include="Views\Customers\Details.cshtml" />
-    <Content Include="Views\Customers\Edit.cshtml" />
-    <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Instruments\Create.cshtml" />
     <Content Include="Views\Instruments\Delete.cshtml" />
     <Content Include="Views\Instruments\Details.cshtml" />
     <Content Include="Views\Instruments\Edit.cshtml" />
     <Content Include="Views\Instruments\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\ShowSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>

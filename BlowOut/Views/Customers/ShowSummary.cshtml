@@ -5,6 +5,13 @@
 
 <h2>Order Summary</h2>
 
-<p>@ViewBag.Name ordered this at this price</p>
-<a class="btn btn-primary" href="@Url.Action("Index", "Rentals")">Return to list of instruments</a>
+<p>Thank you for your order, @ViewBag.CustomerName!</p>
+<hr />
+<b>Order Details:</b>
+<br />
+<p>Instrument: @ViewBag.InstrumentName</p>
+<p>Condition: @ViewBag.InstrumentType</p>
+<p>Price per Month: $@ViewBag.InstrumentPrice</p>
+<p>Price to Own (after 18 mo): $@ViewBag.InstrumentTotal</p>
+<img src="~/Content/Images/@ViewBag.InstrumentDisplay" />
 

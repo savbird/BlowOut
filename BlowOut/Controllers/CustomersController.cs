@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using BlowOut.DAL;
@@ -47,18 +49,32 @@ namespace BlowOut.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "customerID,firstName,lastName,address1,address2,city,state,zip,email,phone")] Customer customer)
+        public ActionResult Create([Bind(Include = "Customer_ID,First_Name,Last_Name,Address_1,Address_2,City,State,Zipcode,Email,Phone")] Customer customer)
         {
             if (ModelState.IsValid)
             {
+                //add customer to db
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
 
-            ViewBag.Name = customer.firstName + " " + customer.lastName;
-            return View("ShowSummary");
+                //update instrument table and get information to send to view
+                db.Database.ExecuteSqlCommand("Update Instrument SET Client_ID = " + customer.Customer_ID + "Where Instrument_ID = " + RentalsController.countID);
+                ViewBag.InstrumentName = RentalsController.instrument.instrumentDescription;
+                ViewBag.InstrumentType = RentalsController.instrument.type;
+                ViewBag.InstrumentPrice = RentalsController.instrument.price;
+                ViewBag.InstrumentTotal = RentalsController.instrument.price * 18;
+                ViewBag.InstrumentDisplay = RentalsController.instrument.instrumentDescription + ".jpg";
+                ViewBag.CustomerName = customer.First_Name + " " + customer.Last_Name;
+
+                return View("ShowSummary");
+            }
+           
+            
+
+            return View(customer);
         }
+
+      
 
         // GET: Customers/Edit/5
         public ActionResult Edit(int? id)
@@ -80,7 +96,7 @@ namespace BlowOut.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "customerID,firstName,lastName,address1,address2,city,state,zip,email,phone")] Customer customer)
+        public ActionResult Edit([Bind(Include = "Customer_ID,First_Name,Last_Name,Address_1,Address_2,City,State,Zipcode,Email,Phone")] Customer customer)
         {
             if (ModelState.IsValid)
             {

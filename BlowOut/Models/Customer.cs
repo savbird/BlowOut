@@ -11,35 +11,46 @@ namespace BlowOut.Models
     public class Customer
     {
         [Key]
-        public int customerID { get; set; }
+        public int Customer_ID { get; set; }
+
         [Display(Name = "First Name")]
         [StringLength(30, ErrorMessage = "Cannot exceed 30 characters")]
         [Required]
-        public String firstName { get; set; }
+        public string First_Name { get; set; }
+
         [Display(Name = "Last Name")]
         [StringLength(30, ErrorMessage = "Cannot exceed 30 characters")]
         [Required]
-        public String lastName { get; set; }
+        public string Last_Name { get; set; }
+
         [Display(Name = "Address Line 1")]
         [StringLength(50, ErrorMessage = "Cannot exceed 30 characters")]
-        public String address1 { get; set; }
+        public string Address_1 { get; set; }
+
         [Display(Name = "Address Line 2")]
         [StringLength(15, ErrorMessage = "Cannot exceed 15 characters")]
-        public String address2 { get; set; }
+        public string Address_2 { get; set; }
+
         [Display(Name = "City")]
         [StringLength(30, ErrorMessage = "Cannot exceed 30 characters")]
-        public String city { get; set; }
+        public string City { get; set; }
+
         [Display(Name = "State")]
         [StringLength(15, ErrorMessage = "Cannot exceed 15 characters")]
-        public String state { get; set; }
+        public string State { get; set; }
+
         [Display(Name = "Zipcode")]
         [StringLength(5, ErrorMessage = "Cannot exceed 5 characters")]
-        public String zip { get; set; }
+        public string Zipcode { get; set; }
+
         [Display(Name = "Email Address")]
         [StringLength(30, ErrorMessage = "Cannot exceed 30 characters")]
-        public String email { get; set; }
+        [RegularExpression(@"^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$", ErrorMessage = "Please Enter Correct Email Address")]
+        public string Email { get; set; }
+
         [Display(Name = "Phone Number")]
+        [RegularExpression(@"^[0-9]{0,15}$", ErrorMessage = "Phone number should contain only numbers")]
         [StringLength(30, ErrorMessage = "Cannot exceed 30 characters")]
-        public String phone { get; set; }
+        public string Phone { get; set; }
     }
 }
