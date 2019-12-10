@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "UpdateData";
+}
+
+<h2>Update Data</h2>
+
+@model IEnumerable<BlowOut.Models.Instrument>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Instrument_Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Client_ID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Instrument_Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client_ID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditData", new { id = item.Instrument_ID }) |
+                @Html.ActionLink("Delete", "DeleteData", new { id = item.Instrument_ID })
+            </td>
+        </tr>
+    }
+</table>
+

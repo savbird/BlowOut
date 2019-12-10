@@ -11,7 +11,7 @@ namespace BlowOut.Models
     public class Customer
     {
         [Key]
-        public int Customer_ID { get; set; }
+        public int Client_ID { get; set; }
 
         [Display(Name = "First Name")]
         [StringLength(30, ErrorMessage = "Cannot exceed 30 characters")]

@@ -11,19 +11,19 @@ namespace BlowOut.Models
     public class Instrument
     {
         [Key]
-        public int instrumentID { get; set; }
+        public int Instrument_ID { get; set; }
         [Display(Name = "Instrument Description")]
         [StringLength(30, ErrorMessage = "Cannot exceed 30 characters")]
         [Required]
-        public String instrumentDescription { get; set; }
+        public String Instrument_Description { get; set; }
         [Display(Name = "Type (New or Used)")]
-        [StringLength(1, ErrorMessage = "Cannot exceed 1 character")]
+        [StringLength(5, ErrorMessage = "Cannot exceed 1 character")]
         [Required]
-        public String type { get; set; }
+        public String Type { get; set; }
         [Display(Name = "Price")]
         [Required]
-        public int price { get; set; }
+        public int Price { get; set; }
         [Display(Name = "Customer")]
-        public int customerID { get; set; }
+        public int? Client_ID { get; set; }
     }
 }

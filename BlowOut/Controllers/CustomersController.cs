@@ -58,12 +58,12 @@ namespace BlowOut.Controllers
                 db.SaveChanges();
 
                 //update instrument table and get information to send to view
-                db.Database.ExecuteSqlCommand("Update Instrument SET Client_ID = " + customer.Customer_ID + "Where Instrument_ID = " + RentalsController.countID);
-                ViewBag.InstrumentName = RentalsController.instrument.instrumentDescription;
-                ViewBag.InstrumentType = RentalsController.instrument.type;
-                ViewBag.InstrumentPrice = RentalsController.instrument.price;
-                ViewBag.InstrumentTotal = RentalsController.instrument.price * 18;
-                ViewBag.InstrumentDisplay = RentalsController.instrument.instrumentDescription + ".jpg";
+                db.Database.ExecuteSqlCommand("Update Instrument SET Client_ID = " + customer.Client_ID + "Where Instrument_ID = " + RentalsController.countID);
+                ViewBag.InstrumentName = RentalsController.instrument.Instrument_Description;
+                ViewBag.InstrumentType = RentalsController.instrument.Type;
+                ViewBag.InstrumentPrice = RentalsController.instrument.Price;
+                ViewBag.InstrumentTotal = RentalsController.instrument.Price * 18;
+                ViewBag.InstrumentDisplay = RentalsController.instrument.Instrument_Description + ".jpg";
                 ViewBag.CustomerName = customer.First_Name + " " + customer.Last_Name;
 
                 return View("ShowSummary");
@@ -141,5 +141,69 @@ namespace BlowOut.Controllers
             }
             base.Dispose(disposing);
         }
+
+        // GET: Instruments
+        public ActionResult UpdateData()
+        {
+            return View(db.Instruments.ToList());
+        }
+                 
+        // GET: Instruments/Edit/5
+        public ActionResult EditData(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Instrument instrument = db.Instruments.Find(id);
+            if (instrument == null)
+            {
+                return HttpNotFound();
+            }
+            return View(instrument);
+        }
+
+        // POST: Instruments/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditData([Bind(Include = "Instrument_ID,Instrument_Description,Type,Price,Customer_ID")] Instrument instrument)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(instrument).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("UpdateData");
+            }
+            return View(instrument);
+        }
+
+        // GET: Instruments/Delete/5
+        public ActionResult DeleteData(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Instrument instrument = db.Instruments.Find(id);
+            if (instrument == null)
+            {
+                return HttpNotFound();
+            }
+            return View(instrument);
+        }
+
+        // POST: Instruments/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteDataConfirmed(int id)
+        {
+            Instrument instrument = db.Instruments.Find(id);
+            db.Instruments.Remove(instrument);
+            db.SaveChanges();
+            return RedirectToAction("UpdateData");
+        }
     }
+
 }

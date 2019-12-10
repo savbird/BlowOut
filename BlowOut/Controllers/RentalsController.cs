@@ -56,13 +56,13 @@ namespace BlowOut.Controllers
             {
                 ViewBag.Price = "$35 a month";
                 db.Database.ExecuteSqlCommand("Insert Into Instrument (Instrument_ID, Instrument_Description, Type, Price) VALUES (@countID, 'Clarinet', 'New', 35)", new SqlParameter("countID", countID));
-                instrument.instrumentDescription = "Clarinet"; instrument.type = "New"; instrument.price = 35;
+                instrument.Instrument_Description = "Clarinet"; instrument.Type = "New"; instrument.Price = 35;
             }
             else
             {
                 ViewBag.Price = "$27 a month";
                 db.Database.ExecuteSqlCommand("Insert Into Instrument (Instrument_ID, Instrument_Description, Type, Price) VALUES (@countID, 'Clarinet', 'Used', 27)", new SqlParameter("countID", countID));
-                instrument.instrumentDescription = "Clarinet"; instrument.type = "Used"; instrument.price = 27;
+                instrument.Instrument_Description = "Clarinet"; instrument.Type = "Used"; instrument.Price = 27;
             }
 
             countID++;
@@ -74,13 +74,13 @@ namespace BlowOut.Controllers
             {
                 ViewBag.Price = "$40 a month";
                 db.Database.ExecuteSqlCommand("Insert Into Instrument (Instrument_ID, Instrument_Description, Type, Price) VALUES (@countID, 'Flute', 'New', 40)", new SqlParameter("countID", countID));
-                instrument.instrumentDescription = "Flute"; instrument.type = "New"; instrument.price = 40;
+                instrument.Instrument_Description = "Flute"; instrument.Type = "New"; instrument.Price = 40;
             }
             else
             {
                 ViewBag.Price = "$25 a month";
                 db.Database.ExecuteSqlCommand("Insert Into Instrument (Instrument_ID, Instrument_Description, Type, Price) VALUES (@countID, 'Flute', 'Used', 25)", new SqlParameter("countID", countID));
-                instrument.instrumentDescription = "Flute"; instrument.type = "Used"; instrument.price = 25;
+                instrument.Instrument_Description = "Flute"; instrument.Type = "Used"; instrument.Price = 25;
             }
 
             countID++;
@@ -93,13 +93,13 @@ namespace BlowOut.Controllers
             {
                 ViewBag.Price = "$42 a month";
                 db.Database.ExecuteSqlCommand("Insert Into Instrument (Instrument_ID, Instrument_Description, Type, Price) VALUES (@countID, 'Saxophone', 'New', 42)", new SqlParameter("countID", countID));
-                instrument.instrumentDescription = "Saxophone"; instrument.type = "New"; instrument.price = 42;
+                instrument.Instrument_Description = "Saxophone"; instrument.Type = "New"; instrument.Price = 42;
             }
             else
             {
                 ViewBag.Price = "$30 a month";
                 db.Database.ExecuteSqlCommand("Insert Into Instrument (Instrument_ID, Instrument_Description, Type, Price) VALUES (@countID, 'Saxophone', 'Used', 30)", new SqlParameter("countID", countID));
-                instrument.instrumentDescription = "Saxophone"; instrument.type = "Used"; instrument.price = 30;
+                instrument.Instrument_Description = "Saxophone"; instrument.Type = "Used"; instrument.Price = 30;
             }
 
             countID++;
@@ -111,13 +111,13 @@ namespace BlowOut.Controllers
             {
                 ViewBag.Price = "$60 a month";
                 db.Database.ExecuteSqlCommand("Insert Into Instrument (Instrument_ID, Instrument_Description, Type, Price) VALUES (@countID, 'Trombone', 'New', 60)", new SqlParameter("countID", countID));
-                instrument.instrumentDescription = "Trombone"; instrument.type = "New"; instrument.price = 60;
+                instrument.Instrument_Description = "Trombone"; instrument.Type = "New"; instrument.Price = 60;
             }
             else
             {
                 ViewBag.Price = "$35 a month";
                 db.Database.ExecuteSqlCommand("Insert Into Instrument (Instrument_ID, Instrument_Description, Type, Price) VALUES (@countID, 'Trombone', 'Used', 35)", new SqlParameter("countID", countID));
-                instrument.instrumentDescription = "Trombone"; instrument.type = "Used"; instrument.price = 35;
+                instrument.Instrument_Description = "Trombone"; instrument.Type = "Used"; instrument.Price = 35;
             }
 
             countID++;
@@ -129,13 +129,13 @@ namespace BlowOut.Controllers
             {
                 ViewBag.Price = "$55 a month";
                 db.Database.ExecuteSqlCommand("Insert Into Instrument (Instrument_ID, Instrument_Description, Type, Price) VALUES (@countID, 'Trumpet', 'New', 55)", new SqlParameter("countID", countID));
-                instrument.instrumentDescription = "Trumpet"; instrument.type = "New"; instrument.price = 55;
+                instrument.Instrument_Description = "Trumpet"; instrument.Type = "New"; instrument.Price = 55;
             }
             else
             {
                 ViewBag.Price = "$25 a month";
                 db.Database.ExecuteSqlCommand("Insert Into Instrument (Instrument_ID, Instrument_Description, Type, Price) VALUES (@countID, 'Trumpet', 'Used', 25)", new SqlParameter("countID", countID));
-                instrument.instrumentDescription = "Trumpet"; instrument.type = "Used"; instrument.price = 25;
+                instrument.Instrument_Description = "Trumpet"; instrument.Type = "Used"; instrument.Price = 25;
             }
 
             countID++;
@@ -147,13 +147,13 @@ namespace BlowOut.Controllers
             {
                 ViewBag.Price = "70 dollars";
                 db.Database.ExecuteSqlCommand("Insert Into Instrument (Instrument_ID, Instrument_Description, Type, Price) VALUES (@countID, 'Tuba', 'New', 70)", new SqlParameter("countID", countID));
-                instrument.instrumentDescription = "Tuba"; instrument.type = "New"; instrument.price = 70;
+                instrument.Instrument_Description = "Tuba"; instrument.Type = "New"; instrument.Price = 70;
             }
             else
             {
                 ViewBag.Price = "50 dollars";
                 db.Database.ExecuteSqlCommand("Insert Into Instrument (Instrument_ID, Instrument_Description, Type, Price) VALUES (@countID, 'Tuba', 'Used', 50)", new SqlParameter("countID", countID));
-                instrument.instrumentDescription = "Tuba"; instrument.type = "Used"; instrument.price = 50;
+                instrument.Instrument_Description = "Tuba"; instrument.Type = "Used"; instrument.Price = 50;
             }
 
             countID++;
