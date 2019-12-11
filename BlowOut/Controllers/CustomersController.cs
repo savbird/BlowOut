@@ -143,6 +143,7 @@ namespace BlowOut.Controllers
         }
 
         // GET: Instruments
+        [Authorize]
         public ActionResult UpdateData()
         {
             return View(db.Instruments.ToList());
@@ -195,7 +196,7 @@ namespace BlowOut.Controllers
         }
 
         // POST: Instruments/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("DeleteData")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteDataConfirmed(int id)
         {
