@@ -41,6 +41,7 @@ namespace BlowOut.Controllers
             return View();
         }
 
+        //POST Login, needs to match username and password
         [HttpPost]
         public ActionResult Login(FormCollection form, bool rememberMe = false)
         {

@@ -6,9 +6,10 @@
 
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
-    <label for="inputUserName">User Name</label>
-    @Html.TextBox("User Name")
-    <label for="inputPassword">Password</label>
-    @Html.Password("Password")
+    <br />
+    <label for="inputUserName">User Name</label><br />
+    @Html.TextBox("User Name")<br /><br />
+    <label for="inputPassword">Password</label><br />
+    @Html.Password("Password")<br /><br />
     <button type="submit">Login</button>
 }
